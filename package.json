@@ -12,11 +12,13 @@
   },
   "dependencies": {
     "react": "16.4.1",
-    "react-native": "0.56"
+    "react-native": "0.56",
+    "react-navigation": "^2.17.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "babel-jest": "23.6.0",
+    "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-react-native": "^5",
     "eslint": "^5.6.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -32,5 +34,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./src/assets/fonts"
+    ]
   }
 }
