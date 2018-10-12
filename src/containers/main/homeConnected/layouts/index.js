@@ -1,8 +1,8 @@
 /*
 * @Author: Volynets Serhii
-* @Date: 2018-10-11 14:23:40
+* @Date: 2018-10-12 13:52:34
  * @Last Modified by: Volynets Serhii
- * @Last Modified time: 2018-10-12 14:33:05
+ * @Last Modified time: 2018-10-12 16:23:03
 * @flow
 */
 import React from 'react';
@@ -12,14 +12,14 @@ import {
   StyleSheet,
 } from 'react-native';
 import COLORS from 'src/assets/styles/colors';
+import IMAGES from 'src/config/image.constants';
 import { HEIGHT } from 'src/assets/styles/dimensions';
 import { TEXTS } from 'src/config/text.constants';
-import IMAGES from 'src/config/image.constants';
 import KeyboardWrapper from 'src/components/common/keyboardWrapper';
 import Image from 'src/components/common/image';
-import Carusel from 'src/components/common/carusel';
 import Button from 'src/components/common/button';
-import CaruselItem from './caruselItem';
+import Header from 'src/components/common/header';
+import ConnectionIndicator from 'src/components/common/connectionIndicator';
 
 type _t_props = {
   onPress?: () => void,
@@ -31,18 +31,28 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentContainer: {
-    paddingTop: 110,
-    paddingBottom: 98,
     minHeight: HEIGHT,
     maxHeight: HEIGHT,
   },
-  box: {
+  header: {
+    marginTop: 52,
+  },
+  mainLayer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  logo: {
-    height: 379,
+  connectedImage: {
+    width: 180,
+    height: 180,
+  },
+  connectedButton: {
+    backgroundColor: COLORS.white,
+    borderWidth: 1,
+    borderColor: COLORS.scorpion,
+  },
+  connectedButtonText: {
+    color: COLORS.midnight,
   },
 });
 
@@ -54,30 +64,27 @@ const Onboarding = (props: _t_props) => {
         keyboardShouldPersistTaps="never"
         contentContainerStyle={styles.contentContainer}
       >
-        <View style={styles.box}>
-          <Carusel
-            items={TEXTS.ONBOARDING.SCREEN.CARUSEL_ITEMS
-              .map(el => (
-                <CaruselItem
-                  key={el.id}
-                  source={{
-                    title: el.title,
-                    text: el.text
-                  }}
-                  image={(
-                    <Image
-                      style={styles.logo}
-                      source={IMAGES.LOGO}
-                      resizeMode="contain"
-                    />
-                  )}
-                />
-              ))
-            }
+        <Header
+          style={styles.header}
+          title={TEXTS.HOME_CONNECTED.HEADER.TITLE}
+          leftIconName="ios-menu"
+          leftIconColor={COLORS.astronautBlue}
+          onLeftIconPress={() => {}}
+        />
+        <View style={styles.mainLayer}>
+          <ConnectionIndicator
+            status
+          />
+          <Image
+            style={styles.connectedImage}
+            source={IMAGES.CONNECTED}
+            resizeMode="contain"
           />
           <Button
             onPress={onPress}
-            title={TEXTS.ONBOARDING.SCREEN.STARTED_BUTTON.toUpperCase()}
+            style={styles.connectedButton}
+            titleStyle={styles.connectedButtonText}
+            title={TEXTS.HOME_CONNECTED.SCREEN.DISCONNECT_BUTTON.toUpperCase()}
           />
         </View>
       </ScrollView>

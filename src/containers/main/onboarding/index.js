@@ -7,8 +7,6 @@
 */
 
 import React, { Component } from 'react';
-
-// import { TEXTS, BLOOD_GROUPS } from 'src/config/text.constants';
 import type { _t_navigation } from 'src/flow.types/navigation';
 import Layouts from './layouts';
 
