@@ -63,5 +63,7 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowIssue\\((\\(<VERSION>\\)? *\\(site=[a-z,_]*
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 
+module.name_mapper='^src/\(.*\)$' -> '<PROJECT_ROOT>/src/\1'
+
 [version]
 ^0.75.0
