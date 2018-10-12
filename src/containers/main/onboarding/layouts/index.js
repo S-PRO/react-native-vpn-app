@@ -28,8 +28,9 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingTop: 110,
-    paddingBottom: 60,
+    paddingBottom: 98,
     minHeight: HEIGHT,
+    maxHeight: HEIGHT,
   },
   box: {
     flex: 1,
@@ -37,17 +38,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   logo: {
-    alignSelf: "center",
     height: 379,
   },
-  caruselContainer: {
-    width: 255,
-    height: 122,
-  },
-  buttonContainer: {
-  },
-  buttonTytle: {
-  }
 });
 
 const Onboarding = () => (
@@ -57,22 +49,29 @@ const Onboarding = () => (
       contentContainerStyle={styles.contentContainer}
     >
       <View style={styles.box}>
-        <Image
-          style={styles.logo}
-          source={IMAGES.LOGO}
-          resizeMode="contain"
-        />
         <Carusel
-          style={styles.caruselContainer}
           items={TEXTS.ONBOARDING.SCREEN.CARUSEL_ITEMS
-            .map(el => <CaruselItem key={el.id} title={el.title} text={el.text} />)
+            .map(el => (
+              <CaruselItem
+                key={el.id}
+                source={{
+                  title: el.title,
+                  text: el.text
+                }}
+                image={(
+                  <Image
+                    style={styles.logo}
+                    source={IMAGES.LOGO}
+                    resizeMode="contain"
+                  />
+                )}
+              />
+            ))
           }
         />
         <Button
-          style={styles.buttonContainer}
           onPress={() => {}}
           title={TEXTS.ONBOARDING.SCREEN.STARTED_BUTTON.toUpperCase()}
-          titleStyle={styles.buttonTytle}
         />
       </View>
     </ScrollView>

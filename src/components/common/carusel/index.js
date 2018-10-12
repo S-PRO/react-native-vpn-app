@@ -8,56 +8,47 @@
 
 import * as React from 'react';
 import {
-  View,
   StyleSheet,
 } from 'react-native';
-import type { _t_styles } from 'src/flow.types/reactElements';
-import CircleIndicator from './circleIndicator';
+import COLORS from 'src/assets/styles/colors';
+import Swiper from 'react-native-swiper';
 
 type _t_props = {
-  style?: _t_styles,
   items?: React.Node[],
 };
 
-type _t_state = {
-  pageNumber: number,
-};
-
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'space-between',
+  containerStyle: {
+    flex: 0,
+    marginBottom: 40,
   },
-  buttonsContainer: {
-    flexDirection: 'row',
+  paginationStyle: {
+    bottom: 0,
+  },
+  dotStyle: {
+    backgroundColor: COLORS.regentGray,
+    opacity: 0.3,
+  },
+  activeDotStyle: {
+    backgroundColor: COLORS.regentGray,
+    opacity: 1,
   },
 });
 
-class Carusel extends React.Component <_t_props, _t_state> {
-  state = {
-    pageNumber: 2,
-  };
-
-  render() {
-    const {
-      items,
-      style
-    } = this.props;
-
-    const {
-      pageNumber
-    } = this.state;
-    return (
-      <View
-        style={[styles.container, style]}
-      >
-        {items && items[pageNumber]}
-        <View style={styles.buttonsContainer}>
-          {items && items.map((el, index) => <CircleIndicator key={index.toString()} primary={pageNumber === index} />)}
-        </View>
-      </View>
-    );
-  }
-}
+const Carusel = (props: _t_props) => {
+  const {
+    items,
+  } = props;
+  return (
+    <Swiper
+      containerStyle={styles.containerStyle}
+      dotStyle={styles.dotStyle}
+      activeDotStyle={styles.activeDotStyle}
+      paginationStyle={styles.paginationStyle}
+    >
+      {items}
+    </Swiper>
+  );
+};
 
 export default Carusel;
