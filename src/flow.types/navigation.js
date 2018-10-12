@@ -6,8 +6,6 @@
 * @flow
 */
 
-import * as React from 'react';
-
 export type _t_navigation = {
   openDrawer: () => void,
   navigate: (route: string, params: ?(string | number | Object | Array<*> | boolean)) => void,
@@ -22,12 +20,4 @@ export type _t_navigation = {
     key: string,
     params: { [string]: any }
   }
-};
-
-export type _t_acl_navigation = {
-  navigate: (route: string, params: ?(string | number | Object | Array<*> | boolean)) => void,
-  goBack: () => void,
-  setTopLevelNavigator: () => void,
-  getCurrentSceneParams: () => Object,
-  wrapper: () => React.Node
 };

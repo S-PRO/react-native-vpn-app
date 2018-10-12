@@ -21,6 +21,10 @@ import Carusel from 'src/components/common/carusel';
 import Button from 'src/components/common/button';
 import CaruselItem from './caruselItem';
 
+type _t_props = {
+  onPress?: () => void,
+};
+
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.white,
@@ -42,40 +46,43 @@ const styles = StyleSheet.create({
   },
 });
 
-const Onboarding = () => (
-  <KeyboardWrapper style={styles.container}>
-    <ScrollView
-      keyboardShouldPersistTaps="never"
-      contentContainerStyle={styles.contentContainer}
-    >
-      <View style={styles.box}>
-        <Carusel
-          items={TEXTS.ONBOARDING.SCREEN.CARUSEL_ITEMS
-            .map(el => (
-              <CaruselItem
-                key={el.id}
-                source={{
-                  title: el.title,
-                  text: el.text
-                }}
-                image={(
-                  <Image
-                    style={styles.logo}
-                    source={IMAGES.LOGO}
-                    resizeMode="contain"
-                  />
-                )}
-              />
-            ))
-          }
-        />
-        <Button
-          onPress={() => {}}
-          title={TEXTS.ONBOARDING.SCREEN.STARTED_BUTTON.toUpperCase()}
-        />
-      </View>
-    </ScrollView>
-  </KeyboardWrapper>
-);
+const Onboarding = (props: _t_props) => {
+  const { onPress } = props;
+  return (
+    <KeyboardWrapper style={styles.container}>
+      <ScrollView
+        keyboardShouldPersistTaps="never"
+        contentContainerStyle={styles.contentContainer}
+      >
+        <View style={styles.box}>
+          <Carusel
+            items={TEXTS.ONBOARDING.SCREEN.CARUSEL_ITEMS
+              .map(el => (
+                <CaruselItem
+                  key={el.id}
+                  source={{
+                    title: el.title,
+                    text: el.text
+                  }}
+                  image={(
+                    <Image
+                      style={styles.logo}
+                      source={IMAGES.LOGO}
+                      resizeMode="contain"
+                    />
+                  )}
+                />
+              ))
+            }
+          />
+          <Button
+            onPress={onPress}
+            title={TEXTS.ONBOARDING.SCREEN.STARTED_BUTTON.toUpperCase()}
+          />
+        </View>
+      </ScrollView>
+    </KeyboardWrapper>
+  );
+};
 
 export default Onboarding;

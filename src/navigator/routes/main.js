@@ -3,29 +3,27 @@ import HomeConnected from 'src/containers/main/homeConnected';
 import HomeDisconnected from 'src/containers/main/homeDisconnected';
 import ServerList from 'src/containers/main/serversList';
 
-import { wrapper } from '../acl';
-
 export default {
   Onboarding: {
-    screen: wrapper(Onboarding),
+    screen: Onboarding,
     navigationOptions: () => ({
       header: null,
     }),
   },
   HomeConnected: {
-    screen: wrapper(HomeConnected),
+    screen: HomeConnected,
     navigationOptions: () => ({
       header: null,
     }),
   },
   HomeDisconnected: {
-    screen: wrapper(HomeDisconnected),
+    screen: HomeDisconnected,
     navigationOptions: () => ({
       header: null,
     }),
   },
   ServerList: {
-    screen: wrapper(ServerList),
+    screen: ServerList,
     navigationOptions: () => ({
       header: null,
     }),

@@ -9,30 +9,26 @@
 import React, { Component } from 'react';
 
 // import { TEXTS, BLOOD_GROUPS } from 'src/config/text.constants';
-import type { _t_acl_navigation } from 'src/flow.types/navigation';
+import type { _t_navigation } from 'src/flow.types/navigation';
 import Layouts from './layouts';
 
 type _t_props = {
-  ACLNavigation: _t_acl_navigation,
+  navigation: _t_navigation,
 };
 
 type _t_state = {
 };
 
 export default class Logic extends Component<_t_props, _t_state> {
-  state = {
-  };
 
-  onSubmit = () => {}
-
-  goBack = () => {
-    const { ACLNavigation } = this.props;
-    ACLNavigation.goBack();
+  onGetStarted = () => {
+    const { navigation } = this.props;
+    navigation.navigate("HomeConnected");
   }
 
   render() {
     return (
-      <Layouts />
+      <Layouts onPress={this.onGetStarted} />
     );
   }
 }

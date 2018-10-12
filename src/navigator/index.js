@@ -8,9 +8,8 @@
 
 import React from 'react';
 import { Keyboard } from 'react-native';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, NavigationActions } from 'react-navigation';
 import Logger from 'src/utils/logger';
-import * as ACLNavigation from './acl';
 import ROUTES from './routes';
 
 const getActiveRouteName = (navigationState) => {
@@ -43,7 +42,7 @@ export default class Navigator extends React.Component<*, *> {
       <RootNavigator
         ref={(ref) => {
           if (ref) {
-            ACLNavigation.setTopLevelNavigator(ref);
+            NavigationActions.navigate(ref);
           }
         }}
         onNavigationStateChange={(prevState, currentState) => {

@@ -10,7 +10,6 @@ import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import Navigator from './navigator';
-// import Loader from 'src/components/common/loader';
 
 type _t_props = {
 };
@@ -30,7 +29,6 @@ export default class App extends Component<_t_props> {
     return (
       <View style={styles.root}>
         <Navigator />
-        {/* <Loader /> */}
       </View>
     );
   }

@@ -9,10 +9,18 @@
 import React from 'react';
 import {
   View,
+  StyleSheet
 } from 'react-native';
 
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'yellow',
+    flex: 1
+  },
+});
+
 const HomeConnected = () => (
-  <View style={{ backgroundColor: 'yellow', flex: 1 }} />
+  <View style={styles.container} />
 );
 
 export default HomeConnected;

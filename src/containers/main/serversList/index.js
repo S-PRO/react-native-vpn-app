@@ -9,10 +9,17 @@
 import React from 'react';
 import {
   View,
+  StyleSheet
 } from 'react-native';
 
-const ServersList = () => (
-  <View style={{ backgroundColor: 'purple', flex: 1 }} />
-);
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'purple',
+    flex: 1
+  },
+});
 
+const ServersList = () => (
+  <View style={styles.container} />
+);
 export default ServersList;
