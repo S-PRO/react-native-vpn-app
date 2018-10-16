@@ -15,7 +15,6 @@ import COLORS from 'src/assets/styles/colors';
 import { HEIGHT } from 'src/assets/styles/dimensions';
 import { TEXTS } from 'src/config/text.constants';
 import IMAGES from 'src/config/image.constants';
-import KeyboardWrapper from 'src/components/common/keyboardWrapper';
 import Image from 'src/components/common/image';
 import Carusel from 'src/components/common/carusel';
 import Button from 'src/components/common/button';
@@ -49,7 +48,7 @@ const styles = StyleSheet.create({
 const Onboarding = (props: _t_props) => {
   const { onPress } = props;
   return (
-    <KeyboardWrapper style={styles.container}>
+    <View style={styles.container}>
       <ScrollView
         keyboardShouldPersistTaps="never"
         contentContainerStyle={styles.contentContainer}
@@ -81,7 +80,7 @@ const Onboarding = (props: _t_props) => {
           />
         </View>
       </ScrollView>
-    </KeyboardWrapper>
+    </View>
   );
 };
 
