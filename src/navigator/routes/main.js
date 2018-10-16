@@ -1,7 +1,7 @@
 import Onboarding from 'src/containers/main/onboarding';
 import HomeConnected from 'src/containers/main/homeConnected';
 import HomeDisconnected from 'src/containers/main/homeDisconnected';
-import ServerList from 'src/containers/main/serversList';
+import ServersList from 'src/containers/main/serversList';
 
 export default {
   Onboarding: {
@@ -22,8 +22,8 @@ export default {
       header: null,
     }),
   },
-  ServerList: {
-    screen: ServerList,
+  ServersList: {
+    screen: ServersList,
     navigationOptions: () => ({
       header: null,
     }),

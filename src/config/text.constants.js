@@ -2,7 +2,7 @@
 * @Author: Volynets Serhii
 * @Date: 2018-10-11 14:36:07
  * @Last Modified by: Volynets Serhii
- * @Last Modified time: 2018-10-11 19:15:50
+ * @Last Modified time: 2018-10-12 16:20:08
 * @flow
 */
 
@@ -35,6 +35,19 @@ const TEXTS = {
       ],
     },
   },
+  HOME_CONNECTED: {
+    HEADER: {
+      TITLE: "VPN"
+    },
+    SCREEN: {
+      DISCONNECT_BUTTON: "Disconnect",
+    },
+  },
 };
 
-export { TEXTS };
+const INDICATOR_STATUS = {
+  CONNECTED: "Connected",
+  DISCONNECTED: "Disconnected",
+};
+
+export { TEXTS, INDICATOR_STATUS };
