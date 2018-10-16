@@ -37,11 +37,22 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     shadowOpacity: 0.1,
     elevation: 1,
+    flexDirection: "row",
   },
   text: {
     fontFamily: FONTS.SF_Pro_Display_Medium,
     fontSize: 13,
     color: COLORS.osloGray,
+  },
+  indicator: {
+    backgroundColor: COLORS.alto,
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    marginLeft: 5,
+  },
+  indicatorConnected: {
+    backgroundColor: COLORS.brightGreen,
   },
 });
 
@@ -61,6 +72,7 @@ const Button = (props: _t_props) => {
       >
         {status ? INDICATOR_STATUS.CONNECTED : INDICATOR_STATUS.DISCONNECTED}
       </Text>
+      <View style={[styles.indicator, status && styles.indicatorConnected]} />
     </View>
   );
 };

@@ -16,6 +16,8 @@ const COLORS = {
   scorpion: "#5B5B5B",
   black: "#000000",
   astronautBlue: "#003C62",
+  brightGreen: "#5ED40A",
+  alto: "#CECECE",
 };
 
 export default COLORS;
