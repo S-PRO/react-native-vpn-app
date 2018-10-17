@@ -2,11 +2,13 @@
 * @Author: Volynets Serhii
 * @Date: 2018-10-11 12:13:09
  * @Last Modified by: Volynets Serhii
- * @Last Modified time: 2018-10-12 14:17:07
+ * @Last Modified time: 2018-10-17 10:05:53
 * @flow
 */
 import React, { Component } from 'react';
 import type { _t_navigation } from 'src/flow.types/navigation';
+import type { _t_server } from 'src/flow.types/servers';
+import SERVERS from 'src/config/servers.constants';
 import Layouts from './layouts';
 
 type _t_props = {
@@ -14,18 +16,48 @@ type _t_props = {
 };
 
 type _t_state = {
+  selectedServer: _t_server,
+  modalVisible: boolean,
 };
 
 export default class Logic extends Component<_t_props, _t_state> {
+  state = {
+    selectedServer: SERVERS.UNITED_STATES,
+    modalVisible: false,
+  }
 
   onConnect = () => {
     const { navigation } = this.props;
-    navigation.navigate("ServersList");
+    navigation.navigate("HomeConnected");
+  }
+
+  onServerClick = () => {
+    this.setState({
+      modalVisible: true,
+    });
+  }
+
+  onServerSelect = (selectedServer: _t_server) => {
+    this.setState({
+      selectedServer,
+      modalVisible: false,
+    });
   }
 
   render() {
+    const {
+      selectedServer,
+      modalVisible,
+    } = this.state;
+
     return (
-      <Layouts onPress={this.onConnect} />
+      <Layouts
+        onPress={this.onConnect}
+        onServerClick={this.onServerClick}
+        onServerSelect={this.onServerSelect}
+        modalVisible={modalVisible}
+        selectedServer={selectedServer}
+      />
     );
   }
 }

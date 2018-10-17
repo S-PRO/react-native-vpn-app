@@ -2,7 +2,7 @@
 * @Author: Volynets Serhii
 * @Date: 2018-10-11 15:40:20
  * @Last Modified by: Volynets Serhii
- * @Last Modified time: 2018-10-11 17:22:12
+ * @Last Modified time: 2018-10-16 18:37:22
 * @flow
 */
 import React from 'react';

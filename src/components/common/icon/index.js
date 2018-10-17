@@ -2,7 +2,7 @@
 * @Author: Volynets Serhii
 * @Date: 2018-10-12 14:53:36
  * @Last Modified by: Volynets Serhii
- * @Last Modified time: 2018-10-12 15:40:52
+ * @Last Modified time: 2018-10-16 19:12:41
 * @flow
 */
 import SimpleLineIcon from 'react-native-vector-icons/SimpleLineIcons';

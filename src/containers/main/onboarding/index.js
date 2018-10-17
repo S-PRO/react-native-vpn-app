@@ -2,7 +2,7 @@
 * @Author: Volynets Serhii
 * @Date: 2018-10-11 12:13:09
  * @Last Modified by: Volynets Serhii
- * @Last Modified time: 2018-10-11 14:28:30
+ * @Last Modified time: 2018-10-17 09:56:06
 * @flow
 */
 
@@ -26,7 +26,9 @@ export default class Logic extends Component<_t_props, _t_state> {
 
   render() {
     return (
-      <Layouts onPress={this.onGetStarted} />
+      <Layouts
+        onPress={this.onGetStarted}
+      />
     );
   }
 }
