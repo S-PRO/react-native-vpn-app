@@ -2,7 +2,7 @@
 * @Author: Volynets Serhii
 * @Date: 2018-10-16 19:09:55
  * @Last Modified by: Volynets Serhii
- * @Last Modified time: 2018-10-17 09:46:36
+ * @Last Modified time: 2018-10-17 11:39:12
 * @flow
 */
 
@@ -88,7 +88,7 @@ const ListItem = (props: _t_props) => {
       {selected
         ? (
           <SelectedIconComponents
-            size={20}
+            size={24}
             name="ios-checkmark-circle"
             style={styles.selectedCheckIcon}
             color={COLORS.dodgerBlue}

@@ -2,7 +2,7 @@
 * @Author: Volynets Serhii
 * @Date: 2018-10-11 14:23:40
  * @Last Modified by: Volynets Serhii
- * @Last Modified time: 2018-10-17 10:40:12
+ * @Last Modified time: 2018-10-17 13:32:39
 * @flow
 */
 import React from 'react';
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingTop: 110,
-    paddingBottom: 98,
+    paddingBottom: 60,
     minHeight: Platform.OS === 'ios' ? HEIGHT : HEIGHT - 24,
     maxHeight: Platform.OS === 'ios' ? HEIGHT : HEIGHT - 24,
   },
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   logo: {
-    height: 379,
+    flex: 1,
   },
 });
 
