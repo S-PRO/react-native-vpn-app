@@ -43,6 +43,19 @@ const TEXTS = {
       DISCONNECT_BUTTON: "Disconnect",
     },
   },
+  HOME_DISCONNECTED: {
+    HEADER: {
+      TITLE: "VPN"
+    },
+    SCREEN: {
+      CONNECT_BUTTON: "Connect now",
+    },
+  },
+  SERVERS_LIST: {
+    HEADER: {
+      TITLE: "Pick your server"
+    },
+  },
 };
 
 const INDICATOR_STATUS = {

@@ -2,7 +2,7 @@
 * @Author: Volynets Serhii
 * @Date: 2018-10-12 13:52:34
  * @Last Modified by: Volynets Serhii
- * @Last Modified time: 2018-10-17 10:33:20
+ * @Last Modified time: 2018-10-17 10:35:05
 * @flow
 */
 import React from 'react';
@@ -56,23 +56,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  indicator: {
+    width: 140,
+  },
   connectedImage: {
     width: 180,
     height: 180,
     marginTop: 30,
     marginBottom: 30,
   },
-  connectedButton: {
-    backgroundColor: COLORS.white,
-    borderWidth: 1,
-    borderColor: COLORS.scorpion,
-  },
-  connectedButtonText: {
-    color: COLORS.midnight,
-  },
 });
 
-const HomeConnected = (props: _t_props) => {
+const HomeDisconnected = (props: _t_props) => {
   const {
     onPress,
     onServerClick,
@@ -94,25 +89,24 @@ const HomeConnected = (props: _t_props) => {
       >
         <Header
           style={styles.header}
-          title={TEXTS.HOME_CONNECTED.HEADER.TITLE}
+          title={TEXTS.HOME_DISCONNECTED.HEADER.TITLE}
           leftIconName="ios-menu"
           leftIconColor={COLORS.astronautBlue}
           onLeftIconPress={() => {}}
         />
         <View style={styles.mainLayer}>
           <ConnectionIndicator
-            status
+            style={styles.indicator}
+            status={false}
           />
           <Image
             style={styles.connectedImage}
-            source={IMAGES.CONNECTED}
+            source={IMAGES.DISCONNECTED}
             resizeMode="contain"
           />
           <Button
             onPress={onPress}
-            style={styles.connectedButton}
-            titleStyle={styles.connectedButtonText}
-            title={TEXTS.HOME_CONNECTED.SCREEN.DISCONNECT_BUTTON.toUpperCase()}
+            title={TEXTS.HOME_DISCONNECTED.SCREEN.CONNECT_BUTTON.toUpperCase()}
           />
         </View>
         <ServersSelector
@@ -125,4 +119,4 @@ const HomeConnected = (props: _t_props) => {
   );
 };
 
-export default HomeConnected;
+export default HomeDisconnected;

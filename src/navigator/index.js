@@ -29,7 +29,9 @@ export default class Navigator extends React.Component<*, *> {
   initRouter = () => createStackNavigator(
     ROUTES, {
       initialRouteName,
-      cardStyle: { shadowColor: "transparent" },
+      cardStyle: {
+        shadowColor: "transparent",
+      },
       navigationOptions: {
         gesturesEnabled: false,
       },

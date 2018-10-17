@@ -2,7 +2,7 @@
 * @Author: Volynets Serhii
 * @Date: 2018-10-11 15:18:21
  * @Last Modified by: Volynets Serhii
- * @Last Modified time: 2018-10-11 19:03:58
+ * @Last Modified time: 2018-10-17 14:29:59
 * @flow
 */
 
@@ -19,7 +19,8 @@ type _t_props = {
 
 const styles = StyleSheet.create({
   containerStyle: {
-    flex: 0,
+    width: '100%',
+    flex: 1,
     marginBottom: 40,
   },
   paginationStyle: {
